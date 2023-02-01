@@ -28,7 +28,7 @@ public class ChessMatch {
     public boolean[][] possibleMoves(ChessPosition sourcePosition){
         Position position = sourcePosition.toPosition();
         validateSourcePosition(position);
-        return board.piece(position).possibleMovies();
+        return board.piece(position).possibleMoves();
     }
 
     public ChessPiece perfomChessMove(ChessPosition sourcePosition, ChessPosition targetPosition){
@@ -57,7 +57,7 @@ public class ChessMatch {
     }
 
     private void validateTargetPosition(Position source, Position target){
-        if(!board.piece(source).possibleMovies(target)){
+        if(!board.piece(source).possibleMoves(target)){
             throw new ChessException("The chosen piece can't move to target position.");
         }
     }
